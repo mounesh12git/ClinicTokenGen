@@ -877,8 +877,8 @@ function PatientDashboard({ userInfo, onLogout, onPharmacyClick }) {
                   <div className="slots-grid">
                     {tokenSlots.map((slot) => {
                       const isDisabledByAvailability = slot.tokensAvailable === 0
+                      const isDisabledByTime = new Date() >= new Date(`${new Date().toISOString().split('T')[0]}T${slot.startTime}:00`)
                       const isDisabledOverall = slot.isDisabled || isDisabledByAvailability || loading
-                      
                       // Get appropriate tooltip message based on disable reason
                       let disabledMessage = 'Select this slot'
                       if (slot.isDisabled) {
