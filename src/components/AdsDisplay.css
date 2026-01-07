@@ -1,0 +1,180 @@
+.ads-display-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.ads-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  position: relative;
+  color: white;
+  animation: slideInUp 0.5s ease-out;
+}
+
+.ads-image {
+  width: 150px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ads-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ads-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ads-content h3 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: white;
+}
+
+.ads-content p {
+  margin: 0;
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+}
+
+.ads-link {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-size: 0.9em;
+  width: fit-content;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.ads-link:hover {
+  background: white;
+  color: #667eea;
+  border-color: white;
+}
+
+.ads-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.ads-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Carousel Indicators */
+.ads-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.3);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.indicator.active {
+  background: #667eea;
+  border-color: #764ba2;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(102, 126, 234, 0.6);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ads-banner {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .ads-image {
+    width: 100%;
+    height: 150px;
+  }
+
+  .ads-content h3 {
+    font-size: 1.1em;
+  }
+
+  .ads-content p {
+    font-size: 0.9em;
+  }
+
+  .ads-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ads-banner {
+    padding: 12px;
+  }
+
+  .ads-content h3 {
+    font-size: 1em;
+  }
+
+  .ads-content p {
+    font-size: 0.85em;
+  }
+
+  .ads-link {
+    font-size: 0.85em;
+    padding: 6px 12px;
+  }
+}

@@ -1,0 +1,199 @@
+.role-selection-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.role-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+.role-card h1 {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.subtitle {
+  text-align: center;
+  color: #999;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.role-option {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.role-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.role-option.patient-role:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.role-option.admin-role:hover {
+  border-color: #4ecdc4;
+  background: #f0fdfb;
+}
+
+.role-option.manager-role:hover {
+  border-color: #ffc107;
+  background: #fffbf0;
+}
+
+.role-option.pharma-role:hover {
+  border-color: #f85032;
+  background: #fff5f2;
+}
+
+.role-icon {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+}
+
+.role-option h3 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+}
+
+.role-option p {
+  color: #666;
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+  min-height: 50px;
+}
+
+.role-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.patient-role .role-btn {
+  background: #667eea;
+  color: white;
+}
+
+.patient-role .role-btn:hover {
+  background: #764ba2;
+}
+
+.admin-role .role-btn {
+  background: #4ecdc4;
+  color: white;
+}
+
+.admin-role .role-btn:hover {
+  background: #2b9c8f;
+}
+
+.manager-role .role-btn {
+  background: #ffc107;
+  color: #333;
+}
+
+.manager-role .role-btn:hover {
+  background: #e0a800;
+}
+
+.pharma-role .role-btn {
+  background: #f85032;
+  color: white;
+}
+
+.pharma-role .role-btn:hover {
+  background: #d43d1f;
+}
+
+.features-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.features-info h4 {
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+.features-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.features-info li {
+  padding: 10px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.features-info li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #4ecdc4;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .role-card {
+    padding: 20px;
+  }
+
+  .role-card h1 {
+    font-size: 1.8em;
+  }
+
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-info ul {
+    grid-template-columns: 1fr;
+  }
+}
